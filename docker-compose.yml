@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    restart: always
+  frontend:
+    depends_on:
+      - nginx
+    build: ./frontend
+    ports:
+      - "3000:3000"
+  backend:
+    depends_on:
+      - nginx
+    build: ./api
+    ports:
+       - "8000:8000" 
