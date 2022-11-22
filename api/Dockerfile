@@ -20,7 +20,7 @@ RUN python3.8 -m pip install --no-cache-dir \
 
 COPY . .
 
-EXPOSE 8000
+EXPOSE 8001
 
 ENTRYPOINT [ "python", "manage.py" ]
-CMD [ "runserver", "0.0.0.0:8000" ]
+CMD [ "runserver", "0.0.0.0:8001" ]
