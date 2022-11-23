@@ -10,6 +10,20 @@ on:
       - master
 
 jobs:
+  Testing:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Testing frontend
+    - uses: actions/setup-node@V2
+    - name: Install dependencies 📦
+      run: |
+         cd frontend
+         npm ci
+    - name: Run component tests 🔸
+      run: |
+         cd my-app
+         npm run test
+
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
