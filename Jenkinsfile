@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'frontend'
-    }
-
-  }
+  agent none
   stages {
     stage('Build') {
       parallel {
@@ -18,7 +13,7 @@ pipeline {
           }
         }
 
-        stage('docker build') {
+        stage('chekout code') {
           agent {
             docker {
               image '/frontend'
@@ -26,7 +21,7 @@ pipeline {
 
           }
           steps {
-            sh 'cd frontend'
+            git(url: 'https://github.com/raeeceip/devops-django-react-task-2', branch: 'master')
           }
         }
 
