@@ -22,5 +22,11 @@ pipeline {
       }
     }
 
+    stage('list contents') {
+      steps {
+        sh 'ls -la'
+      }
+    }
+
   }
 }
