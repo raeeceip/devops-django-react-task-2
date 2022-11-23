@@ -23,8 +23,19 @@ pipeline {
     }
 
     stage('list contents') {
-      steps {
-        sh 'ls -la'
+      parallel {
+        stage('list contents') {
+          steps {
+            sh 'ls -la'
+          }
+        }
+
+        stage('Frontend Unit Test') {
+          steps {
+            sh 'cd frontend && npm -i && npm run test:unit'
+          }
+        }
+
       }
     }
 
