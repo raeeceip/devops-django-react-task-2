@@ -1,0 +1,23 @@
+name: Test Pull Requests
+on:
+  push:
+    branches:
+     - master
+  pull_request:
+    branches:
+      - master
+      
+jobs:
+  Deployment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Testing frontend
+    - uses: actions/setup-node@V2
+    - name: Install dependencies 📦
+      run: |
+         cd frontend
+         npm ci
+    - name: Run component tests 🔸
+       run: |
+         cd my-app
+         npm run test
