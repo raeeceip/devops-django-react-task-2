@@ -14,12 +14,6 @@ pipeline {
         }
 
         stage('chekout code') {
-          agent {
-            docker {
-              image '/frontend'
-            }
-
-          }
           steps {
             git(url: 'https://github.com/raeeceip/devops-django-react-task-2', branch: 'master')
           }
