@@ -4,7 +4,7 @@ All notable changes to this project be documented in this file. This project tri
 ## [MAJOR.MINOR.PATCH] - TODAYS DATE
 ### Added
 
-### Changed
+### Changed eagle
 
 ### Fixed
 
