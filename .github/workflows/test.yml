@@ -1,23 +1,42 @@
-name: Test Pull Requests
+name: CI2
+
 on:
-  push:
-    branches:
-     - master
-  pull_request:
-    branches:
-      - master
-      
+   push:
+     branches: [ main ]
+   pull_request:
+     branches: [ main ]
+
 jobs:
-  Deployment:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Testing frontend
-    - uses: actions/setup-node@V2
-    - name: Install dependencies 📦
-      run: |
-         cd frontend
+   build:
+
+     runs-on: ubuntu-latest
+
+     strategy:
+       matrix:
+         node-version: [14.x]
+
+     steps:
+     - uses: actions/checkout@v2
+     - name: Use Node.js ${{ matrix.node-version }}
+       uses: actions/setup-node@v1
+       with:
+         node-version: ${{ matrix.node-version }}
+     - name: Install dependencies 📦
+       #Using npm ci is generally faster than running npm install
+       run: |
+         cd my-app
          npm ci
-    - name: Run component tests 🔸
-      run: |
+     - name: Build the app 🏗
+       run: |
+         cd my-app
+         npm run build
+     - name: Run component tests 🔸
+       run: |
          cd my-app
          npm run test
+     - name: Start the app 📤
+       run: |
+         cd my-app
+         npm start &
+         npx wait-on --timeout 60000
+ 
