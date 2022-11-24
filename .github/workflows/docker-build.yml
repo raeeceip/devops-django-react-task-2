@@ -38,5 +38,5 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: chiso1/frontend
-        dockerfile: backend/Dockerfile
+        dockerfile: frontend/Dockerfile
         tags: latest
