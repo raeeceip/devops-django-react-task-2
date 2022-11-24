@@ -30,8 +30,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          repository: chiso1/frontend
-          dockerfile: frontend/Dockerfile
           load: true
           tags: chiso1/frontend:latest
           context: ./frontend
