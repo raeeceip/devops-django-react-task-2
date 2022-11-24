@@ -23,6 +23,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: chiso1/backend
         dockerfile: api/Dockerfile
+        push: true
         tags: latest
         context: ./api
 
@@ -40,5 +41,6 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: chiso1/frontend
         dockerfile: frontend/Dockerfile
+        push: true 
         tags: latest
         context: ./frontend
