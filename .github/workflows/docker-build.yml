@@ -24,7 +24,7 @@ jobs:
         repository: chiso1/backend
         dockerfile: api/Dockerfile
         tags: latest
-        context: /api
+        context: ./api
 
   build-and-deploy-front:
     name: Build and Deploy Front-end
@@ -41,4 +41,4 @@ jobs:
         repository: chiso1/frontend
         dockerfile: frontend/Dockerfile
         tags: latest
-        context: /frontend
+        context: ./frontend
