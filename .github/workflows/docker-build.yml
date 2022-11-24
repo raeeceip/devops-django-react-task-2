@@ -22,7 +22,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: chiso1/backend
-        dockerfile: api/api/Dockerfile
+        dockerfile: api/Dockerfile
         tags: latest
         context: /api
 
