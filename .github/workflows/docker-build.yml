@@ -33,7 +33,7 @@ jobs:
           repository: chiso1/frontend
           dockerfile: frontend/Dockerfile
           load: true
-          tags: latest
+          tags: chiso1/frontend:latest
           context: ./frontend
   build-and-deploy-back:
     name: Build and Deploy Back-end
@@ -50,7 +50,7 @@ jobs:
         repository: chiso1/backend
         dockerfile: api/Dockerfile
         push: true
-        tags: latest
+        tags: chiso1/backend:latest
         context: ./api
 
   build-and-deploy-front:
