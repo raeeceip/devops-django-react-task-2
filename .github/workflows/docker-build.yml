@@ -32,7 +32,7 @@ jobs:
         with:
           repository: chiso1/frontend
           dockerfile: frontend/Dockerfile
-          push: true
+          load: true
           tags: latest
           context: ./frontend
   build-and-deploy-back:
