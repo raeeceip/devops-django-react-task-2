@@ -8,15 +8,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /usr/src/app
 
-COPY ./ ./app
-
-RUN python3.8 -m pip install --no-cache-dir --upgrade \
-    pip \
-    setuptools \
-    wheel
-
-RUN python3.8 -m pip install --no-cache-dir \
-    -r requirements.txt
+COPY ./requirements.txt /usr/src/app
 
 COPY . .
 
