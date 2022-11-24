@@ -22,9 +22,9 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: chiso1/backend
-        dockerfile: api/Dockerfile
+        dockerfile: api/api/Dockerfile
         tags: latest
-        context: ./backend
+        context: /api
 
   build-and-deploy-front:
     name: Build and Deploy Front-end
@@ -41,4 +41,4 @@ jobs:
         repository: chiso1/frontend
         dockerfile: frontend/Dockerfile
         tags: latest
-        context: ./frontend
+        context: /frontend
