@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /usr/src/app
 
-COPY requirements.txt .
+COPY ./requirements.txt .
 
 RUN python3.8 -m pip install --no-cache-dir --upgrade \
     pip \
